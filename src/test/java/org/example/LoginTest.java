@@ -10,7 +10,7 @@ public class LoginTest
     @Test
     public void launchGoogle()
     {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\hejimene\\IdeaProjects\\SampleTest\\src\\main\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumWebDrivers\\ChromeDriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
         System.out.println(  driver.getTitle());
