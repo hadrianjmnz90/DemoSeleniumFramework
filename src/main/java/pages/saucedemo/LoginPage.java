@@ -1,4 +1,4 @@
-package pages;
+package pages.saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,10 +15,12 @@ public class LoginPage {
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
 
+
     public void enterCredentials(String username, String password) {
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
     }
+
 
     public void clickLoginButton() {
         driver.findElement(loginButton).click();

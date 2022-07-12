@@ -10,9 +10,9 @@
     <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
     <parameter name="pageLoadTimeout" value="10"/>
-    <test name="LoginTest">
+    <test name="WindowManagementTest">
         <classes>
-            <class name="org.hadriajmnz90.LoginTest"/>
+            <class name="org.hadriajmnz90.WindowManagementS4Test"/>
         </classes>
     </test>
 

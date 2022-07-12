@@ -18,7 +18,7 @@ import java.time.Duration;
 public class BaseDriver {
     public static Logger log = LogManager.getLogger(BaseDriver.class);
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     private String driverPath = System.getProperty("user.dir") + "\\src\\main\\drivers\\";
     private String log4jPath = System.getProperty("user.dir") + "\\src\\";

@@ -1,10 +1,10 @@
-package org.example;
+package org.hadriajmnz90;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.saucedemo.HomePage;
+import pages.saucedemo.LoginPage;
 import utils.BaseDriver;
 
 public class LoginTest extends BaseDriver {
