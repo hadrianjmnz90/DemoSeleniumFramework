@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium.Demo">
+    <listeners>
+    </listeners>
+    <parameter name="browser" value="chrome" />
+    <parameter name="baseUrl" value="https://www.saucedemo.com" />
+    <parameter name="username" value="standard_user" />
+    <parameter name="password" value="secret_sauce" />
+    <parameter name="implicitlyWait" value="10" />
+    <parameter name="pageLoadTimeout" value="10" />
+    <test name="LoginTest">
+        <classes>
+            <class name="org.example.LoginTest" />
+        </classes>
+    </test>
+
+</suite>

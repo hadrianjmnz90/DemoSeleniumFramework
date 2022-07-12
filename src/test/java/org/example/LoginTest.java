@@ -1,20 +1,31 @@
 package org.example;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.HomePage;
+import pages.LoginPage;
+import utils.BaseDriver;
 
-public class LoginTest
-{
+public class LoginTest extends BaseDriver {
+
+    LoginPage loginPage;
+    HomePage homePage;
+
+    @BeforeClass
+    @Parameters("baseUrl")
+    public void startDriver(String baseUrl) {
+        driver.get(baseUrl);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+    }
+
     @Test
-    public void launchGoogle()
-    {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\hejimene\\IdeaProjects\\SampleTest\\src\\main\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.google.com");
-        System.out.println(  driver.getTitle());
-        Assert.assertEquals(driver.getTitle(), "Google");
-        driver.quit();
+    @Parameters({"username", "password"})
+    public void testLoginValidCredentials(String username, String password) {
+        loginPage.enterCredentials(username, password);
+        loginPage.clickLoginButton();
+        homePage.verifyHomePageIsDisplayed();
+        log.info("Home Page Displayed");
     }
 }
