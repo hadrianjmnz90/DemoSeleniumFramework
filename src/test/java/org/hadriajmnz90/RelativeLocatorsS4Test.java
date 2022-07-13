@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.opensourcedemo.LoginPage;
 import utils.BaseDriver;
 
-public class RelativeLocators_S4_Test extends BaseDriver {
+public class RelativeLocatorsS4Test extends BaseDriver {
 
     LoginPage loginPage;
 

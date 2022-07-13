@@ -4,7 +4,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,10 +24,12 @@ public class BaseDriver {
 
 
     @BeforeSuite
-    @Parameters({"browser", "implicitlyWait", "pageLoadTimeout"})
-    public void setDriver(String browser, int implicitlyWait, int pageLoadTimeout) {
-        BasicConfigurator.configure();
-        PropertyConfigurator.configure(log4jPath + "log4j.properties");
+    @Parameters({"browser", "implicitlyWait", "pageLoadTimeout", "printLogs"})
+    public void setDriver(String browser, int implicitlyWait, int pageLoadTimeout, boolean printLogs) {
+        if (printLogs) {
+            BasicConfigurator.configure();
+            PropertyConfigurator.configure(log4jPath + "log4j.properties");
+        }
         System.out.println("browser:" + browser);
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");

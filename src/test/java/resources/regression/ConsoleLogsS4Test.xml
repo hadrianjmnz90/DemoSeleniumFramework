@@ -5,7 +5,7 @@
         <listener class-name="utils.ExtentReport"/>
     </listeners>
     <parameter name="browser" value="chrome"/>
-    <parameter name="baseUrl" value="https://www.saucedemo.com"/>
+    <parameter name="baseUrl" value="http://the-internet.herokuapp.com/broken_images"/>
     <parameter name="username" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
@@ -13,7 +13,7 @@
     <parameter name="printLogs" value="false"/>
     <test name="LoginTest">
         <classes>
-            <class name="org.hadriajmnz90.LoginTest"/>
+            <class name="org.hadriajmnz90.ConsoleLogsS4Test"/>
         </classes>
     </test>
 

@@ -12,7 +12,7 @@
     <parameter name="pageLoadTimeout" value="10" />
     <test name="RelativeLocatorsSelenium4Test">
         <classes>
-            <class name="org.hadriajmnz90.RelativeLocators_S4_Test" />
+            <class name="org.hadriajmnz90.RelativeLocatorsS4Test" />
         </classes>
     </test>
 
