@@ -9,7 +9,7 @@
     <parameter name="username" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
-    <parameter name="pageLoadTimeout" value="10"/>
+    <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
     <test name="LoginTest">
         <classes>

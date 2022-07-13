@@ -7,6 +7,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -35,8 +36,11 @@ public class BaseDriver {
             System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "geckodriver.exe");
+            System.setProperty("webdriver.", driverPath + "geckodriver.exe");
             driver = new FirefoxDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver.exe");
+             driver = new EdgeDriver();
         } else {
             throw new WebDriverException("browser selected not supported in this version");
         }

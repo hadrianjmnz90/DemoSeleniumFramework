@@ -6,7 +6,7 @@
     </listeners>
     <parameter name="browser" value="chrome"/>
     <parameter name="implicitlyWait" value="10"/>
-    <parameter name="pageLoadTimeout" value="10"/>
+    <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
     <test name="MockLocationTest">
         <classes>
