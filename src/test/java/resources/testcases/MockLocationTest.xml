@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium.Demo">
+    <listeners>
+        <listener class-name="utils.ExtentReport"/>
+    </listeners>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="implicitlyWait" value="10"/>
+    <parameter name="pageLoadTimeout" value="20"/>
+    <parameter name="whereIAmSiteUrl" value="https://where-am-i.org/"/>
+    <parameter name="myLocationUrl" value="https://my-location.org/"/>
+    <parameter name="printLogs" value="false"/>
+    <test name="MockLocationTest">
+        <classes>
+            <class name="org.hadriajmnz90.MockLocationTest"/>
+        </classes>
+    </test>
+
+</suite>

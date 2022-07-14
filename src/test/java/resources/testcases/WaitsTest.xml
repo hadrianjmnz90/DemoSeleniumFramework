@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium.Demo">
+    <listeners>
+        <listener class-name="utils.ExtentReport"/>
+    </listeners>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="baseUrl" value="https://www.saucedemo.com"/>
+    <parameter name="username" value="standard_user"/>
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="implicitlyWait" value="0"/>
+    <parameter name="pageLoadTimeout" value="10"/>
+    <parameter name="printLogs" value="false"/>
+    <test name="WaitsTest">
+        <classes>
+            <class name="org.hadriajmnz90.WaitsTest"/>
+        </classes>
+    </test>
+
+</suite>

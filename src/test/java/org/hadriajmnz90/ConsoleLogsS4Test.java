@@ -18,7 +18,6 @@ public class ConsoleLogsS4Test extends BaseDriver {
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Log.enable());
-
         // Add A Listener For The Logs
         devTools.addListener(Log.entryAdded(), logEntry -> {
             System.out.println("----------");
@@ -26,8 +25,6 @@ public class ConsoleLogsS4Test extends BaseDriver {
             System.out.println("Text: " + logEntry.getText());
             System.out.println("Broken URL: " + logEntry.getUrl());
         });
-
-        // Load The AUT
         driver.get(baseUrl);
     }
 }

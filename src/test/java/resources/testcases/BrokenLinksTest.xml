@@ -4,13 +4,16 @@
     <listeners>
         <listener class-name="utils.ExtentReport"/>
     </listeners>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="baseUrl" value="https://www.saucedemo.com"/>
+    <parameter name="username" value="standard_user"/>
+    <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
     <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
-    <test name="MockLocationTest">
+    <test name="BrokenLinksTest">
         <classes>
-            <class name="org.hadriajmnz90.MockLocationTest"/>
+            <class name="org.hadriajmnz90.BrokenLinksTest"/>
         </classes>
     </test>
 

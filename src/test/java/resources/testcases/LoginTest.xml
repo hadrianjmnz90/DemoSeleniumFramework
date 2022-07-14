@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="utils.ExtentReport"/>
     </listeners>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="firefox"/>
     <parameter name="baseUrl" value="https://www.saucedemo.com"/>
     <parameter name="username" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
