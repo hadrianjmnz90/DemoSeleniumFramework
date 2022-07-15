@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Selenium.Demo">
+<suite name="Selenium.Demo.Regression">
     <listeners>
         <listener class-name="utils.ExtentReport"/>
     </listeners>
+    <!-- Demonstrate how to execute more than 1 test in a single xml, works only for chrome since
+     some tests use DevTools which is a chrome only feature-->
     <parameter name="browser" value="chrome"/>
+    <parameter name="baseUrl" value="https://www.saucedemo.com"/>
     <parameter name="herokuAppUrl" value="http://the-internet.herokuapp.com/broken_images"/>
     <parameter name="username" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
-    <parameter name="pageLoadTimeout" value="10"/>
+    <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
-    <test name="LoginTest">
+    <test name="Regression" parallel="tests" thread-count="3">
         <classes>
+            <class name="org.hadriajmnz90.LoginTest"/>
+            <class name="org.hadriajmnz90.BrokenLinksTest"/>
             <class name="org.hadriajmnz90.ConsoleLogsS4Test"/>
         </classes>
     </test>

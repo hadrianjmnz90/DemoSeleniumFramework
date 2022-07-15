@@ -13,8 +13,8 @@ import utils.BaseDriver;
 public class ConsoleLogsS4Test extends BaseDriver {
 
     @Test
-    @Parameters("baseUrl")
-    public void testLoginValidCredentials(String baseUrl) {
+    @Parameters("herokuAppUrl")
+    public void testConsoleLogs(String baseUrl) {
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Log.enable());
