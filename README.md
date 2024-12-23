@@ -29,3 +29,9 @@ To use this framework, ensure you have the following installed on your machine:
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/selenium-4-basic-framework.git
+
+## Key Directories
+- base/: Contains base classes like BaseTest and BasePage.
+- pages/: Contains Page Object Model (POM) classes for web elements and actions.
+- tests/: Contains test scripts.
+- utils/: Contains helper classes and utilities.

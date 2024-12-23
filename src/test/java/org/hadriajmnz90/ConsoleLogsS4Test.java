@@ -2,12 +2,9 @@ package org.hadriajmnz90;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v103.log.Log;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.devtools.v127.log.Log;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.saucedemo.HomePage;
-import pages.saucedemo.LoginPage;
 import utils.BaseDriver;
 
 public class ConsoleLogsS4Test extends BaseDriver {

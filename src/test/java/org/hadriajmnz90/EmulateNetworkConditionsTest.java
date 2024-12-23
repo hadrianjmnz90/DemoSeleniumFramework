@@ -3,8 +3,9 @@ package org.hadriajmnz90;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v103.network.Network;
-import org.openqa.selenium.devtools.v103.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v127.network.Network;
+import org.openqa.selenium.devtools.v127.network.*;
+import org.openqa.selenium.devtools.v127.network.model.ConnectionType;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.BaseDriver;
@@ -29,7 +30,10 @@ public class EmulateNetworkConditionsTest extends BaseDriver {
                 150,
                 2500,
                 2000,
-                Optional.of(ConnectionType.CELLULAR4G)));
+                Optional.of(ConnectionType.CELLULAR4G),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty() ));
         driver.get(baseUrl);
         System.out.println("Enable Slow Network: " + driver.getTitle());
         long endTime = System.currentTimeMillis();

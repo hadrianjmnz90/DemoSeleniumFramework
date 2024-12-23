@@ -11,6 +11,7 @@
     <parameter name="implicitlyWait" value="10" />
     <parameter name="pageLoadTimeout" value="10" />
     <parameter name="printLogs" value="false" />
+
     <test name="RelativeLocatorsSelenium4Test">
         <classes>
             <class name="org.hadriajmnz90.RelativeLocatorsS4Test" />
