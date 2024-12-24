@@ -38,3 +38,4 @@ build/
 .idea/
 target/classes/
 target/test-classes/
+target/reports/

@@ -39,7 +39,6 @@ public class BaseDriver {
         } else {
             throw new WebDriverException("browser selected not supported in this version");
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitlyWait));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTimeout));
         driver.manage().window().maximize();
         log.info("Browser Launched");
@@ -48,5 +47,6 @@ public class BaseDriver {
     @AfterSuite
     public void endTest() {
         driver.quit();
+        log.info("Test Session Closed");
     }
 }

@@ -8,9 +8,9 @@
     <parameter name="baseUrl" value="https://www.saucedemo.com"/>
     <parameter name="username" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
-    <parameter name="implicitlyWait" value="10"/>
     <parameter name="pageLoadTimeout" value="10"/>
-    <parameter name="printLogs" value="false"/>
+    <parameter name="printLogs" value="true"/>
+
     <test name="WindowManagementTest">
         <classes>
             <class name="org.hadriajmnz90.WindowManagementS4Test"/>
