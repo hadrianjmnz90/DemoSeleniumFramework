@@ -6,13 +6,12 @@
     </listeners>
     <parameter name="browser" value="chrome"/>
     <parameter name="baseUrl" value="https://www.saucedemo.com"/>
-    <parameter name="username" value="standard_user"/>
-    <parameter name="password" value="secret_sauce"/>
     <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
-    <test name="LoginTest">
+
+    <test name="LoginTestDataProvider">
         <classes>
-            <class name="org.hadriajmnz90.LoginTest"/>
+            <class name="org.hadriajmnz90.LoginTestDataProvider"/>
         </classes>
     </test>
 

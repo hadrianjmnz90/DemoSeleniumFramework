@@ -9,9 +9,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
@@ -21,14 +19,18 @@ public class BaseDriver {
     protected static WebDriver driver;
     private String log4jPath = System.getProperty("user.dir") + "\\src\\";
 
-
     @BeforeSuite
-    @Parameters({"browser", "implicitlyWait", "pageLoadTimeout", "printLogs"})
-    public void setDriver(String browser, int implicitlyWait, int pageLoadTimeout, boolean printLogs) {
+    @Parameters({"printLogs"})
+    public void setLoggingProperties(boolean printLogs){
         if (printLogs) {
             BasicConfigurator.configure();
             PropertyConfigurator.configure(log4jPath + "log4j.properties");
         }
+    }
+
+    @BeforeTest
+    @Parameters({"browser", "pageLoadTimeout"})
+    public void setDriver(String browser, int pageLoadTimeout) {
         log.info("browser: " + browser);
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
@@ -44,7 +46,7 @@ public class BaseDriver {
         log.info("Browser Launched");
     }
 
-    @AfterSuite
+    @AfterTest
     public void endTest() {
         driver.quit();
         log.info("Test Session Closed");
