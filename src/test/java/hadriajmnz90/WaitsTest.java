@@ -1,12 +1,13 @@
-package org.hadriajmnz90;
+package hadriajmnz90;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.opensourcedemo.LoginPage;
+import pages.saucedemo.HomePage;
+import pages.saucedemo.LoginPage;
 import utils.BaseDriver;
 
-public class RelativeLocatorsS4Test extends BaseDriver {
+public class WaitsTest extends BaseDriver {
 
     LoginPage loginPage;
 
@@ -18,12 +19,8 @@ public class RelativeLocatorsS4Test extends BaseDriver {
     }
 
     @Test
-    public void testGetCredentialsOnScreen() {
-        loginPage.getCredentialsTextWithRelativeLocators();
-    }
-
-    @Test
-    public void testGetAllSocialMedia() {
-        loginPage.getAllSocialMediaTextWithRelativeLocators();
+    @Parameters()
+    public void testWaitMethodsInSelenium() {
+       loginPage.waitMethodsSelenium();
     }
 }

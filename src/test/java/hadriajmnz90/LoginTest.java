@@ -1,4 +1,4 @@
-package org.hadriajmnz90;
+package hadriajmnz90;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

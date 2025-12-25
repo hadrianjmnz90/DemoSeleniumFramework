@@ -1,4 +1,4 @@
-package org.hadriajmnz90;
+package hadriajmnz90;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;

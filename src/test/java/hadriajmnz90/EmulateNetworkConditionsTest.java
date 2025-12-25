@@ -1,11 +1,10 @@
-package org.hadriajmnz90;
+package hadriajmnz90;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v127.network.Network;
-import org.openqa.selenium.devtools.v127.network.*;
-import org.openqa.selenium.devtools.v127.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v143.network.Network;
+import org.openqa.selenium.devtools.v143.network.model.ConnectionType;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.BaseDriver;
@@ -24,7 +23,11 @@ public class EmulateNetworkConditionsTest extends BaseDriver {
         devTools.send(Network.enable(
                 Optional.empty(),
                 Optional.empty(),
-                Optional.empty()));
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty()
+        ));
+
         devTools.send(Network.emulateNetworkConditions(
                 false,
                 150,

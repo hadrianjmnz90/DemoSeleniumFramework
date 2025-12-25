@@ -1,10 +1,10 @@
-package org.hadriajmnz90;
+package hadriajmnz90;
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v127.emulation.Emulation;
+import org.openqa.selenium.devtools.v143.emulation.Emulation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
@@ -48,9 +48,14 @@ public class MockLocationTest extends BaseDriver {
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Emulation.setGeolocationOverride(
-                Optional.of(52.5043),
-                Optional.of(13.4501),
-                Optional.of(1)));
+                Optional.<Number>of(52.5043),   // latitude
+                Optional.<Number>of(13.4501),   // longitude
+                Optional.<Number>of(1),         // accuracy
+                Optional.empty(),               // altitude
+                Optional.empty(),               // altitudeAccuracy
+                Optional.empty(),               // heading
+                Optional.empty()                // speed
+        ));
         driver.get(url);
         SikuliActions.clickAllowLocationButton();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));

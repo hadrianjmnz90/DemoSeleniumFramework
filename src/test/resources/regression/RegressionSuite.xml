@@ -16,10 +16,9 @@
     <parameter name="printLogs" value="false"/>
     <test name="Regression" parallel="tests" thread-count="3">
         <classes>
-            <class name="org.hadriajmnz90.LoginTest"/>
-            <class name="org.hadriajmnz90.BrokenLinksTest"/>
-            <class name="org.hadriajmnz90.ConsoleLogsS4Test"/>
+            <class name="hadriajmnz90.LoginTest"/>
+            <class name="hadriajmnz90.BrokenLinksTest"/>
+            <class name="hadriajmnz90.ConsoleLogsS4Test"/>
         </classes>
     </test>
-
 </suite>
