@@ -12,8 +12,7 @@
     <parameter name="printLogs" value="false"/>
     <test name="LoginTest">
         <classes>
-            <class name="org.hadriajmnz90.LoginTest"/>
+            <class name="hadriajmnz90.LoginTest"/>
         </classes>
     </test>
-
 </suite>

@@ -46,7 +46,7 @@ public class VisualValidation {
         }
     }
 
-    public static void captureBaseline(WebDriver driver,  String imageName) throws IOException {
+    public static void captureBaseline(WebDriver driver, String imageName) throws IOException {
         new File(BASELINE_PATH).mkdirs();
         new File(ACTUAL_PATH).mkdirs();
         new File(DIFF_PATH).mkdirs();

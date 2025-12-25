@@ -35,5 +35,4 @@ public class BrokenLinksTest extends BaseDriver {
     public void testBrokenLinks() throws IOException {
         homePage.getBrokenLinks();
     }
-
 }

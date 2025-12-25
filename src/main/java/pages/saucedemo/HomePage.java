@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import utils.Waits;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -22,6 +23,7 @@ public class HomePage {
     private By linksTag = By.tagName("a");
 
     public void verifyHomePageIsDisplayed() {
+        Waits.fluentWaitUntilElementPresent(10, 1, productsTitle);
         Assert.assertTrue(driver.findElement(productsTitle).isDisplayed(), " Element not shown in the website");
     }
 

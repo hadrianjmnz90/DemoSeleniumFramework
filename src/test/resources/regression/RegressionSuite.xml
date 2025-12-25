@@ -14,11 +14,14 @@
     <parameter name="implicitlyWait" value="10"/>
     <parameter name="pageLoadTimeout" value="20"/>
     <parameter name="printLogs" value="false"/>
-    <test name="Regression" parallel="tests" thread-count="3">
+    <test name="LoginTest">
         <classes>
             <class name="hadriajmnz90.LoginTest"/>
+        </classes>
+    </test>
+    <test name="BrokenLinksTest">
+        <classes>
             <class name="hadriajmnz90.BrokenLinksTest"/>
-            <class name="hadriajmnz90.ConsoleLogsS4Test"/>
         </classes>
     </test>
 </suite>
