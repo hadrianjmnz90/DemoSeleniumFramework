@@ -12,6 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,16 @@ public class BaseDriver {
         if (printLogs) {
             BasicConfigurator.configure();
             PropertyConfigurator.configure(log4jPath + "log4j.properties");
+        }
+        System.out.println("Cleaning Extent Report folder...");
+        File file = new File(System.getProperty("user.dir") + "\\target\\reports");
+        String[] myFiles;
+        if (file.isDirectory()) {
+            myFiles = file.list();
+            for (int i = 0; i < myFiles.length; i++) {
+                File myFile = new File(file, myFiles[i]);
+                myFile.delete();
+            }
         }
     }
 

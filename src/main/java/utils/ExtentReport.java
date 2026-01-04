@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -15,14 +16,14 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Date;
 
+import static utils.BaseDriver.driver;
+
 
 public class ExtentReport implements ITestListener {
 
     static Date d = new Date();
     static String fileName = "Extent_" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
-
     private static ExtentReports extent = ExtentManager.createInstance(System.getProperty("user.dir") + "/target/reports/" + fileName);
-
     public static ThreadLocal<ExtentTest> testReport = new ThreadLocal<ExtentTest>();
 
     public void onTestStart(ITestResult result) {
@@ -34,7 +35,7 @@ public class ExtentReport implements ITestListener {
         String methodName = result.getMethod().getMethodName();
         String logText = "<b>" + "TEST CASE:- " + methodName.toUpperCase() + " PASSED" + "</b>";
         try {
-            ExtentManager.captureScreenshot();
+            ExtentManager.captureScreenshot( driver);
             testReport.get().pass("<b>" + "<font color=" + "green>" + "Screenshot" + "</font>" + "</b>",
                     MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName)
                             .build());
@@ -51,7 +52,7 @@ public class ExtentReport implements ITestListener {
                 + "</font>" + "</b >" + "</summary>" + exceptionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
 
         try {
-            ExtentManager.captureScreenshot();
+            ExtentManager.captureScreenshot(driver);
             testReport.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
                     MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName).build());
         } catch (Exception e) {
@@ -76,15 +77,7 @@ public class ExtentReport implements ITestListener {
     }
 
     public void onStart(ITestContext context) {
-        File file = new File(System.getProperty("user.dir") + "\\target\\reports");
-        String[] myFiles;
-        if (file.isDirectory()) {
-            myFiles = file.list();
-            for (int i = 0; i < myFiles.length; i++) {
-                File myFile = new File(file, myFiles[i]);
-                myFile.delete();
-            }
-        }
+        System.out.println("Starting ExtentReport ...");
     }
 
     public void onFinish(ITestContext context) {
