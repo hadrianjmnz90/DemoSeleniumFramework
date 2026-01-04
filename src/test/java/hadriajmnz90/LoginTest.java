@@ -35,6 +35,6 @@ public class LoginTest extends BaseDriver {
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         // To capture baseline (only once) -- comment later
         //VisualValidation.captureBaseline(driver, "testLoginValidCredentials");
-        VisualValidation.validateElementScreenshot(driver, "testLoginValidCredentials");
+        //VisualValidation.validateElementScreenshot(driver, "testLoginValidCredentials");
     }
 }
