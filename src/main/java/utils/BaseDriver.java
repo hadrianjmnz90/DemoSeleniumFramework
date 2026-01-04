@@ -61,8 +61,17 @@ public class BaseDriver {
 
     @AfterTest
     public void endTest() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
         log.info("Test Session Closed");
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     public static ChromeOptions setChromeOptions() {

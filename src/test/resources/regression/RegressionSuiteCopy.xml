@@ -16,9 +16,7 @@
     <parameter name="printLogs" value="false"/>
     <test name="Regression" >
         <classes>
-            <class name="hadriajmnz90.LoginTest"/>
-            <class name="hadriajmnz90.BrokenLinksTest"/>
-            <class name="hadriajmnz90.ConsoleLogsS4Test"/>
+            <class name="hadriajmnz90.LoginTestDataProvider"/>
         </classes>
     </test>
 </suite>
