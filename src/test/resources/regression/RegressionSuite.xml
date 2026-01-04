@@ -24,4 +24,9 @@
             <class name="hadriajmnz90.BrokenLinksTest"/>
         </classes>
     </test>
+    <test name="LoginDataProvider">
+        <classes>
+            <class name="hadriajmnz90.LoginTestDataProvider"/>
+        </classes>
+    </test>
 </suite>
