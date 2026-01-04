@@ -1,9 +1,8 @@
 package utils;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,8 +27,7 @@ public class BaseDriver {
     @Parameters({"printLogs"})
     public void setLoggingProperties(boolean printLogs){
         if (printLogs) {
-            BasicConfigurator.configure();
-            PropertyConfigurator.configure(log4jPath + "log4j.properties");
+            Configurator.initialize(null, log4jPath + "log4j2.xml");
         }
         System.out.println("Cleaning Extent Report folder...");
         File file = new File(System.getProperty("user.dir") + "\\target\\reports");

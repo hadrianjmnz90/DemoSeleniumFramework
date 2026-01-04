@@ -7,13 +7,11 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v143.emulation.Emulation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.FindFailed;
 
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.BaseDriver;
-import utils.SikuliActions;
 
 
 import java.time.Duration;
@@ -24,8 +22,8 @@ import java.util.Optional;
 public class MockLocationTest extends BaseDriver {
 
     @Test
-    @Parameters({"whereIAmSiteUrl", })
-    public void mockGeoLocationExecuteCDPCommand(String url) throws FindFailed {
+    @Parameters({"whereIAmSiteUrl",})
+    public void mockGeoLocationExecuteCDPCommand(String url) {
         double expectedLatitude = 21.8791566;
         double expectedLongitude = -102.3046049;
         Map coordinates = new HashMap() {{
@@ -35,7 +33,7 @@ public class MockLocationTest extends BaseDriver {
         }};
         ((ChromeDriver) driver).executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
         driver.get(url);
-        SikuliActions.clickAllowLocationButton();
+
         String actualLatitude = driver.findElement(By.id("latitude")).getText();
         String actualLongitude = driver.findElement(By.id("longitude")).getText();
         System.out.println("actualLatitude: " + actualLatitude + " actualLongitude: " + actualLongitude);
@@ -44,7 +42,7 @@ public class MockLocationTest extends BaseDriver {
 
     @Test()
     @Parameters("myLocationUrl")
-    public void mockGeoLocationDevTools(String url) throws FindFailed {
+    public void mockGeoLocationDevTools(String url) {
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Emulation.setGeolocationOverride(
@@ -57,7 +55,7 @@ public class MockLocationTest extends BaseDriver {
                 Optional.empty()                // speed
         ));
         driver.get(url);
-        SikuliActions.clickAllowLocationButton();
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("address")), "Berlin"));
         String myLocation = driver.findElement(By.id("address")).getText();
