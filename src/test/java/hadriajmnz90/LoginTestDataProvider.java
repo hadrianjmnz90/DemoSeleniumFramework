@@ -15,7 +15,7 @@ public class LoginTestDataProvider extends BaseDriver {
     HomePage homePage;
 
     @Test(dataProvider = "loginData")
-    public void testLoginValidCredentials(String username, String password, boolean isLoginSuccessExpected) {
+    public void testLoginUserRoles(String username, String password, boolean isLoginSuccessExpected) {
         driver.get("https://www.saucedemo.com");
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);

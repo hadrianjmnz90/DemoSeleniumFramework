@@ -39,7 +39,7 @@ public class ExtentManager {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         Date d = new Date();
         screenshotName = d.toString().replace(":", "_").replace(" ", "_") + System.currentTimeMillis() + ".png";
-        FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/target/reports/" + screenshotName));
-        screenshotPath = System.getProperty("user.dir") + "/target/reports/" + screenshotName;
+        FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + File.separator + "target" + File.separator + "reports" + File.separator + screenshotName));
+        screenshotPath = System.getProperty("user.dir") + File.separator + "target" + File.separator + "reports" + File.separator + screenshotName;
     }
 }

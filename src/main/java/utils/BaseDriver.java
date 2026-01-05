@@ -21,7 +21,7 @@ public class BaseDriver {
 
     protected static WebDriver driver;
 
-    private String log4jPath = System.getProperty("user.dir") + "\\src\\";
+    private String log4jPath = System.getProperty("user.dir") + File.separator + "src" + File.separator;
 
     @BeforeSuite
     @Parameters({"printLogs"})
@@ -30,7 +30,7 @@ public class BaseDriver {
             Configurator.initialize(null, log4jPath + "log4j2.xml");
         }
         System.out.println("Cleaning Extent Report folder...");
-        File file = new File(System.getProperty("user.dir") + "\\target\\reports");
+        File file = new File(System.getProperty("user.dir") + File.separator + "target" + File.separator + "reports");
         String[] myFiles;
         if (file.isDirectory()) {
             myFiles = file.list();
