@@ -18,10 +18,13 @@ public class VisualValidation {
     private static final String ACTUAL_PATH = "screenshots/actual/";
     private static final String DIFF_PATH = "screenshots/diff/";
 
-    public static void validateElementScreenshot(WebDriver driver, String imageName) throws IOException {
+    static {
         new File(BASELINE_PATH).mkdirs();
         new File(ACTUAL_PATH).mkdirs();
         new File(DIFF_PATH).mkdirs();
+    }
+
+    public static void validateElementScreenshot(WebDriver driver, String imageName) throws IOException {
         // Take element screenshot with AShot
         Screenshot screenshot = new AShot()
                 .takeScreenshot(driver);
@@ -47,9 +50,6 @@ public class VisualValidation {
     }
 
     public static void captureBaseline(WebDriver driver, String imageName) throws IOException {
-        new File(BASELINE_PATH).mkdirs();
-        new File(ACTUAL_PATH).mkdirs();
-        new File(DIFF_PATH).mkdirs();
         Screenshot screenshot = new AShot()
                 .takeScreenshot(driver);
         BufferedImage baselineImage = screenshot.getImage();

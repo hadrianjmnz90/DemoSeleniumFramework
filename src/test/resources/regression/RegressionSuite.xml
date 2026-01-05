@@ -13,7 +13,7 @@
     <parameter name="password" value="secret_sauce"/>
     <parameter name="implicitlyWait" value="10"/>
     <parameter name="pageLoadTimeout" value="20"/>
-    <parameter name="printLogs" value="false"/>
+    <parameter name="printLogs" value="true"/>
     <test name="LoginTest">
         <classes>
             <class name="hadriajmnz90.LoginTest"/>
